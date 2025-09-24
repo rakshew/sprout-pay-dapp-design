@@ -24,7 +24,7 @@ export default function DashboardPage() {
 
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         <div className="flex items-center justify-between mb-8 stagger-item">
-          <h1 className="text-3xl font-bold text-white">Your Dashboard</h1>
+          <h1 className="text-3xl font-bold text-foreground">Your Dashboard</h1>
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <Link href="/create">
@@ -42,7 +42,7 @@ export default function DashboardPage() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-white">Total Volume</p>
+                  <p className="text-sm text-muted-foreground">Total Volume</p>
                   <p className="text-2xl font-bold text-primary">$47.2K</p>
                 </div>
                 <TrendingUp className="w-8 h-8 text-primary" />
@@ -54,7 +54,7 @@ export default function DashboardPage() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-white">Active Contracts</p>
+                  <p className="text-sm text-muted-foreground">Active Contracts</p>
                   <p className="text-2xl font-bold text-accent">3</p>
                 </div>
                 <Shield className="w-8 h-8 text-accent" />
@@ -66,7 +66,7 @@ export default function DashboardPage() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-white">Completed</p>
+                  <p className="text-sm text-muted-foreground">Completed</p>
                   <p className="text-2xl font-bold text-primary">12</p>
                 </div>
                 <CheckCircle className="w-8 h-8 text-primary" />
@@ -78,8 +78,8 @@ export default function DashboardPage() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-white">Success Rate</p>
-                  <p className="text-2xl font-bold text-white">100%</p>
+                  <p className="text-sm text-muted-foreground">Success Rate</p>
+                  <p className="text-2xl font-bold text-foreground">100%</p>
                 </div>
                 <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                   <span className="text-primary text-sm font-bold">✓</span>
@@ -95,7 +95,7 @@ export default function DashboardPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white">Active Contracts</p>
+                    <p className="text-sm text-muted-foreground">Active Contracts</p>
                     <p className="text-2xl font-bold text-accent">3</p>
                   </div>
                   <Shield className="w-8 h-8 text-accent" />
@@ -109,7 +109,7 @@ export default function DashboardPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white">Completed</p>
+                    <p className="text-sm text-muted-foreground">Completed</p>
                     <p className="text-2xl font-bold text-primary">12</p>
                   </div>
                   <CheckCircle className="w-8 h-8 text-primary" />
@@ -123,8 +123,8 @@ export default function DashboardPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white">Disputed</p>
-                    <p className="text-2xl font-bold text-white">0</p>
+                    <p className="text-sm text-muted-foreground">Disputed</p>
+                    <p className="text-2xl font-bold text-foreground">0</p>
                   </div>
                   <AlertCircle className="w-8 h-8 text-muted-foreground" />
                 </div>
@@ -143,13 +143,13 @@ export default function DashboardPage() {
                       <Shield className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-bold text-white">Latest Active Payment</div>
-                      <div className="text-sm text-white font-mono">ETH → USDC Transaction</div>
+                      <div className="font-bold text-foreground">Latest Active Payment</div>
+                      <div className="text-sm text-muted-foreground font-mono">ETH → USDC Transaction</div>
                     </div>
                   </div>
                   <Badge className="bg-accent/20 text-accent border-accent/30">Funded & Locked</Badge>
                 </div>
-                <div className="text-sm text-white">Click to view all active payments and details</div>
+                <div className="text-sm text-muted-foreground">Click to view all active payments and details</div>
               </CardContent>
             </Card>
           </Link>
@@ -157,7 +157,7 @@ export default function DashboardPage() {
 
         <div className="mt-12 text-center stagger-item">
           <Link href="/">
-            <Button variant="ghost" className="text-white hover:text-primary btn-animate">
+            <Button variant="ghost" className="text-foreground hover:text-primary btn-animate">
               ← Return to Home Base
             </Button>
           </Link>
