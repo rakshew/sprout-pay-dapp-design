@@ -485,7 +485,7 @@ export default function CreatePaymentPage() {
 
       {/* Contract Upload Modal */}
       <Dialog open={contractModalOpen} onOpenChange={setContractModalOpen}>
-        <DialogContent className="max-w-2xl bg-card border-primary/20">
+        <DialogContent className="max-w-xl bg-card border-primary/20">
           <DialogHeader>
             <DialogTitle className="text-2xl flex items-center gap-3">📄 Upload Custom Contract</DialogTitle>
           </DialogHeader>
@@ -548,14 +548,16 @@ export default function CreatePaymentPage() {
 
       {/* Dispute Resolution Modal */}
       <Dialog open={disputeModalOpen} onOpenChange={setDisputeModalOpen}>
-        <DialogContent className="max-w-2xl bg-card border-accent/20">
+        <DialogContent className="max-w-xl bg-zinc-800 border-accent/20 leading-6">
           <DialogHeader>
-            <DialogTitle className="text-2xl flex items-center gap-3">⚖️ Dispute Resolution Settings</DialogTitle>
+            <DialogTitle className="text-2xl flex items-center gap-3 text-white">
+              ⚖️ Dispute Resolution Settings
+            </DialogTitle>
           </DialogHeader>
           <div className="space-y-6 mt-6">
             <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
               <div className="text-lg font-medium text-accent mb-2">How it works:</div>
-              <ul className="text-sm text-muted-foreground space-y-1">
+              <ul className="text-sm text-white space-y-1">
                 <li>• If a dispute arises, either party can initiate arbitration</li>
                 <li>• A neutral arbitrator reviews the case and evidence</li>
                 <li>• The arbitrator's decision is final and binding</li>
@@ -572,9 +574,9 @@ export default function CreatePaymentPage() {
                 value={arbitratorAddress}
                 onChange={(e) => setArbitratorAddress(e.target.value)}
                 placeholder="0x... (Leave empty for default arbitrator)"
-                className="mt-2 h-12 border-accent/30 bg-background/50 backdrop-blur-sm focus:border-accent focus:ring-2 focus:ring-accent/20"
+                className="mt-2 h-12 border-accent/30 bg-zinc-700 backdrop-blur-sm focus:border-accent focus:ring-2 focus:ring-accent/20 text-white"
               />
-              <div className="text-sm text-muted-foreground mt-2">
+              <div className="text-sm text-white mt-2">
                 If empty, we'll assign a verified arbitrator from our network
               </div>
             </div>
@@ -590,16 +592,14 @@ export default function CreatePaymentPage() {
                 value={arbitrationFee}
                 onChange={(e) => setArbitrationFee(e.target.value)}
                 placeholder="0.01"
-                className="mt-2 h-12 border-accent/30 bg-background/50 backdrop-blur-sm focus:border-accent focus:ring-2 focus:ring-accent/20"
+                className="mt-2 h-12 border-accent/30 bg-zinc-700 backdrop-blur-sm focus:border-accent focus:ring-2 focus:ring-accent/20 text-white"
               />
-              <div className="text-sm text-muted-foreground mt-2">
-                Fee paid by the losing party to cover arbitration costs
-              </div>
+              <div className="text-sm text-white mt-2">Fee paid by the losing party to cover arbitration costs</div>
             </div>
 
-            <div className="bg-muted/20 border border-primary/20 rounded-lg p-4">
+            <div className="bg-zinc-700 border border-primary/20 rounded-lg p-4">
               <div className="text-sm font-medium text-primary mb-2">Dispute Timeline:</div>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-white">
                 <div className="flex justify-between">
                   <span>Dispute Filing Period:</span>
                   <span className="text-accent">Up to {escrowDays} days</span>
