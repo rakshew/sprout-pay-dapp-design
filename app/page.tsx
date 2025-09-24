@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 py-4 max-w-7xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-white font-heading">SproutPay</span>
+              <span className="text-2xl font-bold text-foreground font-heading">SproutPay</span>
             </div>
 
             <div className="flex items-center gap-4">
@@ -60,12 +60,12 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-6xl lg:text-7xl font-bold mb-8 text-balance leading-tight font-heading">
-              <span className="text-white">Crypto payments,</span>
+              <span className="text-foreground">Crypto payments,</span>
               <br />
               <span className="text-primary">simplified.</span>
             </h1>
 
-            <p className="text-xl text-white mb-10 text-balance max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans">
+            <p className="text-xl text-foreground mb-10 text-balance max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans">
               Send or receive any EVM token, across chains, with military-grade escrow protection.
             </p>
 
@@ -120,7 +120,7 @@ export default function HomePage() {
             ].map((chain, index) => (
               <div
                 key={chain.name}
-                className={`flex items-center gap-3 text-white hover:text-white smooth-transition stagger-item animate-bounce-subtle`}
+                className={`flex items-center gap-3 text-foreground hover:text-foreground smooth-transition stagger-item animate-bounce-subtle`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div
@@ -129,7 +129,7 @@ export default function HomePage() {
                 >
                   {chain.letter}
                 </div>
-                <span className="text-sm font-medium text-white">{chain.name}</span>
+                <span className="text-sm font-medium text-foreground">{chain.name}</span>
               </div>
             ))}
           </div>
@@ -139,8 +139,8 @@ export default function HomePage() {
       {/* Who it's for Section */}
       <section className="container mx-auto px-6 py-24 max-w-7xl">
         <div className="text-center mb-16 stagger-item">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Who is SproutPay for?</h2>
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Who is SproutPay for?</h2>
+          <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
             The simplest way to move value onchain. No middlemen, no locked ecosystems, no guesswork.
           </p>
         </div>
@@ -181,8 +181,8 @@ export default function HomePage() {
               className={`p-8 bg-gradient-to-br ${item.gradient} border-2 ${item.border} hover:border-opacity-80 card-hover stagger-item`}
             >
               <div className="text-3xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
-              <p className="text-white leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
+              <p className="text-foreground leading-relaxed">{item.desc}</p>
             </Card>
           ))}
         </div>
@@ -192,8 +192,8 @@ export default function HomePage() {
       <section className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 py-24">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16 stagger-item">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">How it works</h2>
-            <p className="text-xl text-white">Three simple steps to secure crypto payments</p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">How it works</h2>
+            <p className="text-xl text-foreground">Three simple steps to secure crypto payments</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
@@ -223,8 +223,8 @@ export default function HomePage() {
                 >
                   {item.step}
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-white">{item.title}</h3>
-                <p className="text-white text-lg leading-relaxed">{item.desc}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-foreground">{item.title}</h3>
+                <p className="text-foreground text-lg leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
       {/* Why SproutPay */}
       <section className="container mx-auto px-6 py-24 max-w-7xl">
         <div className="text-center mb-16 stagger-item">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Why SproutPay?</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Why SproutPay?</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -273,8 +273,8 @@ export default function HomePage() {
               className={`p-8 bg-gradient-to-br ${item.gradient} border-2 ${item.border} hover:border-opacity-80 card-hover stagger-item`}
             >
               <div className="text-3xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
-              <p className="text-white leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
+              <p className="text-foreground leading-relaxed">{item.desc}</p>
             </Card>
           ))}
         </div>
@@ -285,7 +285,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="animate-fade-in">
-              <h2 className="text-4xl font-bold text-white mb-12 font-heading">What users say</h2>
+              <h2 className="text-4xl font-bold text-foreground mb-12 font-heading">What users say</h2>
               <div className="space-y-8">
                 {[
                   {
@@ -305,11 +305,11 @@ export default function HomePage() {
                     key={testimonial.name}
                     className={`p-8 bg-gradient-to-br ${testimonial.gradient} border-2 border-primary/40 hover:border-primary/60 card-hover`}
                   >
-                    <p className="text-white mb-6 text-lg leading-relaxed font-sans">"{testimonial.quote}"</p>
+                    <p className="text-foreground mb-6 text-lg leading-relaxed font-sans">"{testimonial.quote}"</p>
                     <div className="flex items-center gap-4">
                       <div>
-                        <div className="font-semibold text-white font-heading">{testimonial.name}</div>
-                        <div className="text-sm text-white font-sans">{testimonial.role}</div>
+                        <div className="font-semibold text-foreground font-heading">{testimonial.name}</div>
+                        <div className="text-sm text-foreground font-sans">{testimonial.role}</div>
                       </div>
                     </div>
                   </Card>
@@ -318,7 +318,7 @@ export default function HomePage() {
             </div>
 
             <div className="animate-fade-in animation-delay-400">
-              <h2 className="text-4xl font-bold text-white mb-12 font-heading">Roadmap</h2>
+              <h2 className="text-4xl font-bold text-foreground mb-12 font-heading">Roadmap</h2>
               <div className="space-y-8">
                 {[
                   { phase: "✓", title: "V1 Payment Links", desc: "Secure escrow payments", status: "complete" },
@@ -337,8 +337,8 @@ export default function HomePage() {
                       {item.phase}
                     </div>
                     <div>
-                      <div className="font-semibold text-white text-lg font-heading">{item.title}</div>
-                      <div className="text-white font-sans">{item.desc}</div>
+                      <div className="font-semibold text-foreground text-lg font-heading">{item.title}</div>
+                      <div className="text-foreground font-sans">{item.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -351,8 +351,10 @@ export default function HomePage() {
       {/* Footer CTA */}
       <section className="container mx-auto px-6 py-24 max-w-5xl text-center">
         <div className="stagger-item">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">Ready to simplify your crypto payments?</h2>
-          <p className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-8">
+            Ready to simplify your crypto payments?
+          </h2>
+          <p className="text-xl text-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             Join thousands of users who trust SproutPay for secure, gasless payments across any EVM chain.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
