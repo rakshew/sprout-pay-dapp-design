@@ -29,7 +29,7 @@ export default function ContractPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-white mb-4">Upload Custom Contract</h1>
-            <p className="text-xl text-gray-300">Add your employment contract terms</p>
+            <p className="text-xl text-white">Add your employment contract terms</p>
           </div>
 
           {/* File Upload */}
@@ -39,7 +39,7 @@ export default function ContractPage() {
               <div className="text-xl text-white mb-2">
                 {contractFile ? contractFile.name : "Drop your contract here"}
               </div>
-              <div className="text-gray-400 mb-4">Supports PDF, DOC, DOCX files</div>
+              <div className="text-white mb-4">Supports PDF, DOC, DOCX files</div>
               <input
                 type="file"
                 onChange={handleFileUpload}
@@ -58,7 +58,7 @@ export default function ContractPage() {
 
           {/* Contract Terms */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-600 mb-8">
-            <label className="block text-gray-300 text-lg mb-4">Additional Terms (Optional)</label>
+            <label className="block text-white text-lg mb-4">Additional Terms (Optional)</label>
             <textarea
               value={contractTerms}
               onChange={(e) => setContractTerms(e.target.value)}
@@ -81,7 +81,7 @@ export default function ContractPage() {
               className={`px-12 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 ${
                 contractFile
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl"
-                  : "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-600 text-white cursor-not-allowed"
               }`}
             >
               Continue to Review

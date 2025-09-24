@@ -1,8 +1,26 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useWallet } from "@/hooks/use-wallet"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 export default function WalletConnect() {
+  const { isConnected, address, connectWallet } = useWallet()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (isConnected) {
+      router.push("/create")
+    }
+  }, [isConnected, router])
+
+  const handleWalletConnect = async (walletType: "metamask" | "walletconnect" | "coinbase") => {
+    await connectWallet(walletType)
+  }
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20"></div>
@@ -18,7 +36,10 @@ export default function WalletConnect() {
         </div>
 
         <div className="space-y-4 mb-12">
-          <Card className="border-primary/20 bg-card/50 backdrop-blur-sm card-hover cursor-pointer">
+          <Card
+            className="border-primary/20 bg-card/50 backdrop-blur-sm card-hover cursor-pointer"
+            onClick={() => handleWalletConnect("metamask")}
+          >
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center">
@@ -37,7 +58,10 @@ export default function WalletConnect() {
             </CardContent>
           </Card>
 
-          <Card className="border-accent/20 bg-card/50 backdrop-blur-sm card-hover cursor-pointer">
+          <Card
+            className="border-accent/20 bg-card/50 backdrop-blur-sm card-hover cursor-pointer"
+            onClick={() => handleWalletConnect("walletconnect")}
+          >
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
@@ -56,7 +80,10 @@ export default function WalletConnect() {
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 bg-card/50 backdrop-blur-sm card-hover cursor-pointer">
+          <Card
+            className="border-primary/20 bg-card/50 backdrop-blur-sm card-hover cursor-pointer"
+            onClick={() => handleWalletConnect("coinbase")}
+          >
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">

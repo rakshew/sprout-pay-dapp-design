@@ -4,23 +4,23 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Web3 futuristic theme with cyber aesthetics */
+  /* Professional Web3 theme with reduced glow effects */
   --background: oklch(0.05 0.02 240);
-  --foreground: oklch(0.95 0.05 180);
+  --foreground: oklch(0.98 0.02 180); /* Made text whiter */
   --card: oklch(0.08 0.03 240);
-  --card-foreground: oklch(0.95 0.05 180);
+  --card-foreground: oklch(0.98 0.02 180); /* Made card text whiter */
   --popover: oklch(0.08 0.03 240);
-  --popover-foreground: oklch(0.95 0.05 180);
+  --popover-foreground: oklch(0.98 0.02 180); /* Made popover text whiter */
   --primary: oklch(0.7 0.25 160);
   --primary-foreground: oklch(0.05 0.02 240);
   --secondary: oklch(0.15 0.05 240);
-  --secondary-foreground: oklch(0.95 0.05 180);
+  --secondary-foreground: oklch(0.98 0.02 180); /* Made secondary text whiter */
   --muted: oklch(0.12 0.04 240);
-  --muted-foreground: oklch(0.6 0.1 180);
+  --muted-foreground: oklch(0.85 0.05 180); /* Made muted text whiter */
   --accent: oklch(0.6 0.3 280);
-  --accent-foreground: oklch(0.95 0.05 180);
+  --accent-foreground: oklch(0.98 0.02 180); /* Made accent text whiter */
   --destructive: oklch(0.6 0.3 0);
-  --destructive-foreground: oklch(0.95 0.05 180);
+  --destructive-foreground: oklch(0.98 0.02 180); /* Made destructive text whiter */
   --border: oklch(0.2 0.05 240);
   --input: oklch(0.12 0.04 240);
   --ring: oklch(0.7 0.25 160);
@@ -31,11 +31,11 @@
   --chart-5: oklch(0.7 0.2 40);
   --radius: 0.75rem;
   --sidebar: oklch(0.08 0.03 240);
-  --sidebar-foreground: oklch(0.95 0.05 180);
+  --sidebar-foreground: oklch(0.98 0.02 180); /* Made sidebar text whiter */
   --sidebar-primary: oklch(0.7 0.25 160);
   --sidebar-primary-foreground: oklch(0.05 0.02 240);
   --sidebar-accent: oklch(0.15 0.05 240);
-  --sidebar-accent-foreground: oklch(0.95 0.05 180);
+  --sidebar-accent-foreground: oklch(0.98 0.02 180); /* Made sidebar accent text whiter */
   --sidebar-border: oklch(0.2 0.05 240);
   --sidebar-ring: oklch(0.7 0.25 160);
 
@@ -90,36 +90,37 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.05) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.03) 0%, transparent 50%);
+    /* Reduced background gradient opacity for more professional look */
   }
 }
 
-/* Enhanced Web3 glow effects and animations */
+/* Reduced glow effects for professional appearance */
 .glow-primary {
-  box-shadow: 0 0 30px rgba(120, 219, 226, 0.4), 0 0 60px rgba(120, 219, 226, 0.2);
+  box-shadow: 0 0 15px rgba(120, 219, 226, 0.2), 0 0 30px rgba(120, 219, 226, 0.1);
   transition: all 0.3s ease;
 }
 
 .glow-primary:hover {
-  box-shadow: 0 0 40px rgba(120, 219, 226, 0.6), 0 0 80px rgba(120, 219, 226, 0.3);
+  box-shadow: 0 0 20px rgba(120, 219, 226, 0.3), 0 0 40px rgba(120, 219, 226, 0.15);
   transform: translateY(-2px);
 }
 
 .glow-accent {
-  box-shadow: 0 0 30px rgba(255, 119, 198, 0.4), 0 0 60px rgba(255, 119, 198, 0.2);
+  box-shadow: 0 0 15px rgba(255, 119, 198, 0.2), 0 0 30px rgba(255, 119, 198, 0.1);
   transition: all 0.3s ease;
 }
 
 .glow-accent:hover {
-  box-shadow: 0 0 40px rgba(255, 119, 198, 0.6), 0 0 80px rgba(255, 119, 198, 0.3);
+  box-shadow: 0 0 20px rgba(255, 119, 198, 0.3), 0 0 40px rgba(255, 119, 198, 0.15);
   transform: translateY(-2px);
 }
 
 .cyber-border {
   border: 1px solid;
-  border-image: linear-gradient(45deg, rgba(120, 219, 226, 0.5), rgba(255, 119, 198, 0.5)) 1;
+  border-image: linear-gradient(45deg, rgba(120, 219, 226, 0.3), rgba(255, 119, 198, 0.3)) 1;
   position: relative;
 }
 
@@ -128,7 +129,7 @@
   position: absolute;
   inset: -1px;
   padding: 1px;
-  background: linear-gradient(45deg, rgba(120, 219, 226, 0.3), rgba(255, 119, 198, 0.3));
+  background: linear-gradient(45deg, rgba(120, 219, 226, 0.2), rgba(255, 119, 198, 0.2));
   border-radius: inherit;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: xor;
@@ -137,17 +138,17 @@
 
 @keyframes border-glow {
   0% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   100% {
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 
-/* Animated background grid */
+/* Reduced grid pattern opacity for cleaner look */
 .grid-bg {
-  background-image: linear-gradient(rgba(120, 219, 226, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(120, 219, 226, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(120, 219, 226, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 219, 226, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: grid-move 30s linear infinite;
 }
@@ -219,12 +220,12 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(120, 219, 226, 0.4);
+    box-shadow: 0 0 10px rgba(120, 219, 226, 0.2);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 30px rgba(120, 219, 226, 0.6);
-    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(120, 219, 226, 0.3);
+    transform: scale(1.02);
   }
 }
 
@@ -244,7 +245,7 @@
 
 .card-hover:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(120, 219, 226, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(120, 219, 226, 0.1);
 }
 
 /* Enhanced homepage animations */
@@ -348,8 +349,8 @@
 
 /* Adding subtle grid pattern for minimalistic homepage background */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(120, 219, 226, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(120, 219, 226, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(120, 219, 226, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 219, 226, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 

@@ -33,7 +33,7 @@ export default function RecipientPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-white mb-4">Enter Recipient</h1>
-            <p className="text-xl text-gray-300">Who are you sending this payment to?</p>
+            <p className="text-xl text-white">Who are you sending this payment to?</p>
           </div>
 
           {/* Recipient Type Selector */}
@@ -48,7 +48,7 @@ export default function RecipientPage() {
                   key={type}
                   onClick={() => setRecipientType(type)}
                   className={`px-6 py-3 rounded-xl transition-all duration-300 ${
-                    recipientType === type ? "bg-purple-600 text-white" : "text-gray-400 hover:text-white"
+                    recipientType === type ? "bg-purple-600 text-white" : "text-white hover:text-white"
                   }`}
                 >
                   <span className="mr-2">{icon}</span>
@@ -61,7 +61,7 @@ export default function RecipientPage() {
           {/* Recipient Input */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-600 mb-8">
             <div className="mb-6">
-              <label className="block text-gray-300 text-lg mb-4">
+              <label className="block text-white text-lg mb-4">
                 {recipientType === "address" && "Wallet Address"}
                 {recipientType === "email" && "Email Address"}
                 {recipientType === "ens" && "ENS Domain"}
@@ -96,7 +96,7 @@ export default function RecipientPage() {
               className={`inline-flex items-center px-12 py-4 rounded-2xl text-xl font-semibold transition-all duration-300 ${
                 isValidInput()
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl"
-                  : "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-600 text-white cursor-not-allowed"
               }`}
             >
               Continue to Escrow

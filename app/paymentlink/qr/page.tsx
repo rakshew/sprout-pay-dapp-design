@@ -18,7 +18,7 @@ export default function QRCodePage() {
           {/* Header */}
           <div className="mb-12">
             <h1 className="text-5xl font-bold text-white mb-4">QR Code Generated</h1>
-            <p className="text-xl text-gray-300">Share this QR code for easy payment access</p>
+            <p className="text-xl text-white">Share this QR code for easy payment access</p>
           </div>
 
           {/* QR Code Display */}
@@ -35,7 +35,7 @@ export default function QRCodePage() {
 
           {/* Payment Link */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-600 mb-8">
-            <div className="text-gray-400 mb-2">Payment Link:</div>
+            <div className="text-white mb-2">Payment Link:</div>
             <div className="text-white font-mono text-sm break-all bg-gray-700/50 p-4 rounded-xl">{paymentLink}</div>
           </div>
 

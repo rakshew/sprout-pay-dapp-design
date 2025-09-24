@@ -1,8 +1,21 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { useWallet } from "@/hooks/use-wallet"
 
 export default function HomePage() {
+  const { isConnected, address, connectWallet, disconnectWallet } = useWallet()
+
+  const handleWalletClick = async () => {
+    if (isConnected) {
+      disconnectWallet()
+    } else {
+      await connectWallet("metamask")
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Animated background elements */}
@@ -25,8 +38,11 @@ export default function HomePage() {
               </span>
             </div>
 
-            <Button className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white glow-accent smooth-transition hover-lift">
-              Connect Wallet
+            <Button
+              onClick={handleWalletClick}
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white glow-accent smooth-transition hover-lift"
+            >
+              {isConnected ? `${address?.slice(0, 6)}...${address?.slice(-4)}` : "Connect Wallet"}
             </Button>
           </div>
         </div>

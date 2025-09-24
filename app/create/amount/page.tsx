@@ -29,14 +29,14 @@ export default function AmountPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-white mb-4">Enter Amount</h1>
-            <p className="text-xl text-gray-300">Specify how much you want to send</p>
+            <p className="text-xl text-white">Specify how much you want to send</p>
           </div>
 
           {/* Amount Input */}
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-600 mb-8">
             <div className="text-center mb-6">
               <div className="text-6xl mb-4">⟠</div>
-              <div className="text-2xl text-gray-400 mb-2">ETH Amount</div>
+              <div className="text-2xl text-white mb-2">ETH Amount</div>
             </div>
 
             <div className="relative mb-6">
@@ -52,7 +52,7 @@ export default function AmountPage() {
             {/* USD Conversion */}
             <div className="text-center">
               <div className="text-3xl font-semibold text-green-400">≈ ${usdValue} USD</div>
-              <div className="text-gray-400 mt-2">Live conversion rate</div>
+              <div className="text-white mt-2">Live conversion rate</div>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default function AmountPage() {
               className={`inline-flex items-center px-12 py-4 rounded-2xl text-xl font-semibold transition-all duration-300 ${
                 amount && Number.parseFloat(amount) > 0
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl"
-                  : "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-600 text-white cursor-not-allowed"
               }`}
             >
               Continue to Recipient

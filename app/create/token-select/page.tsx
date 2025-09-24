@@ -44,7 +44,7 @@ export default function TokenSelectPage() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-white mb-4">Select Token to Send</h1>
-            <p className="text-xl text-gray-300">Choose from any EVM-compatible token - no DEX required</p>
+            <p className="text-xl text-white">Choose from any EVM-compatible token - no DEX required</p>
           </div>
 
           {/* Token Grid */}
@@ -61,7 +61,7 @@ export default function TokenSelectPage() {
               >
                 <div className="text-4xl mb-3">{token.icon}</div>
                 <div className="text-xl font-bold text-white mb-1">{token.symbol}</div>
-                <div className="text-gray-400 mb-2">{token.name}</div>
+                <div className="text-white mb-2">{token.name}</div>
                 <div className="text-green-400 font-semibold">{token.price}</div>
               </button>
             ))}
@@ -74,7 +74,7 @@ export default function TokenSelectPage() {
               className={`inline-flex items-center px-12 py-4 rounded-2xl text-xl font-semibold transition-all duration-300 ${
                 selectedToken
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl"
-                  : "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-600 text-white cursor-not-allowed"
               }`}
             >
               Continue with {selectedToken || "Token"}

@@ -1,13 +1,16 @@
 "use client"
-
-import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Wallet, Shield, CheckCircle, AlertTriangle, Sparkles } from "lucide-react"
+import { useWallet } from "@/hooks/use-wallet"
 
 export default function ReceivePaymentPage() {
-  const [walletConnected, setWalletConnected] = useState(false)
+  const { isConnected, address, connectWallet } = useWallet()
+
+  const handleConnectWallet = async () => {
+    await connectWallet("metamask")
+  }
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -91,26 +94,35 @@ export default function ReceivePaymentPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              {!walletConnected ? (
+              {!isConnected ? (
                 <div className="text-center space-y-6">
                   <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
                     <Wallet className="w-10 h-10 text-accent" />
                   </div>
                   <p className="text-lg text-muted-foreground">Connect your wallet to claim payment</p>
-                  <Button
-                    onClick={() => setWalletConnected(true)}
-                    className="w-full h-14 text-lg glow-accent smooth-transition"
-                  >
+                  <Button onClick={handleConnectWallet} className="w-full h-14 text-lg glow-accent smooth-transition">
                     Connect Wallet
                   </Button>
                   <div className="grid grid-cols-3 gap-3">
-                    <Button variant="outline" className="h-12 border-accent/30 bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="h-12 border-accent/30 bg-transparent"
+                      onClick={handleConnectWallet}
+                    >
                       MetaMask
                     </Button>
-                    <Button variant="outline" className="h-12 border-accent/30 bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="h-12 border-accent/30 bg-transparent"
+                      onClick={() => connectWallet("walletconnect")}
+                    >
                       WalletConnect
                     </Button>
-                    <Button variant="outline" className="h-12 border-accent/30 bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="h-12 border-accent/30 bg-transparent"
+                      onClick={() => connectWallet("coinbase")}
+                    >
                       Coinbase
                     </Button>
                   </div>
@@ -122,7 +134,7 @@ export default function ReceivePaymentPage() {
                   </div>
                   <p className="text-lg text-primary font-bold">Wallet Connected</p>
                   <div className="bg-muted/20 rounded-xl p-4">
-                    <p className="font-mono text-sm">0xabcd...efgh</p>
+                    <p className="font-mono text-sm">{address}</p>
                   </div>
                   <Link href="/payment/confirm">
                     <Button className="w-full h-14 text-lg glow-primary smooth-transition">Claim Payment</Button>
