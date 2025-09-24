@@ -48,7 +48,7 @@ export default function TransactionCompletedPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold">ETH → USDC Swap</div>
+                    <div className="font-bold">ETH → USDC Transaction</div>
                     <div className="text-sm text-muted-foreground font-mono">0x1A2b...3C4</div>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export default function TransactionCompletedPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-bold">USDC → ETH Swap</div>
+                    <div className="font-bold">USDC → ETH Transaction</div>
                     <div className="text-sm text-muted-foreground font-mono">0x5D6e...7F8</div>
                   </div>
                 </div>

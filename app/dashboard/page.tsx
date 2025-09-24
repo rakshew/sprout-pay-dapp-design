@@ -143,13 +143,13 @@ export default function DashboardPage() {
                       <Shield className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-bold text-white">Latest Active Contract</div>
-                      <div className="text-sm text-white font-mono">ETH → USDC Swap</div>
+                      <div className="font-bold text-white">Latest Active Payment</div>
+                      <div className="text-sm text-white font-mono">ETH → USDC Transaction</div>
                     </div>
                   </div>
                   <Badge className="bg-accent/20 text-accent border-accent/30">Funded & Locked</Badge>
                 </div>
-                <div className="text-sm text-white">Click to view all active contracts and details</div>
+                <div className="text-sm text-white">Click to view all active payments and details</div>
               </CardContent>
             </Card>
           </Link>
