@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 py-4 max-w-7xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-foreground font-heading">SproutPay</span>
+              <span className="text-2xl font-bold text-foreground font-heading">Sprout</span>
             </div>
 
             <div className="flex items-center gap-4">
@@ -94,7 +94,7 @@ export default function HomePage() {
             <div className="relative w-96 h-96 flex items-center justify-center">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/ChatGPT%20Image%20Sep%2024%2C%202025%2C%2008_50_11%20PM-2tcftScPiQHQgiFDNq3HzbeSvx7V2q.png"
-                alt="SproutPay Network - Cross-chain token connections"
+                alt="Sprout Network - Cross-chain token connections"
                 className="w-full h-full object-contain animate-spin-slow"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-full blur-3xl -z-10"></div>
@@ -139,7 +139,7 @@ export default function HomePage() {
       {/* Who it's for Section */}
       <section className="container mx-auto px-6 py-24 max-w-7xl">
         <div className="text-center mb-16 stagger-item">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Who is SproutPay for?</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Who is Sprout for?</h2>
           <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
             The simplest way to move value onchain. No middlemen, no locked ecosystems, no guesswork.
           </p>
@@ -231,10 +231,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why SproutPay */}
+      {/* Why Sprout */}
       <section className="container mx-auto px-6 py-24 max-w-7xl">
         <div className="text-center mb-16 stagger-item">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Why SproutPay?</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Why Sprout?</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -355,7 +355,7 @@ export default function HomePage() {
             Ready to simplify your crypto payments?
           </h2>
           <p className="text-xl text-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of users who trust SproutPay for secure, gasless payments across any EVM chain.
+            Join thousands of users who trust Sprout for secure, gasless payments across any EVM chain.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/create">

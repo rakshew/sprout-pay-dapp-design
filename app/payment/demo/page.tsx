@@ -98,7 +98,7 @@ export default function PaymentDemoPage() {
           <Link href="/">
             <Button variant="ghost" className="text-muted-foreground hover:text-primary">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to SproutPay
+              Back to Sprout
             </Button>
           </Link>
         </div>

@@ -13,8 +13,8 @@ export default function FeaturesPopup() {
 
       <div className="relative z-10 container mx-auto px-8 py-20 max-w-4xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">SproutPay Features</h1>
-          <p className="text-xl text-muted-foreground">Discover what makes SproutPay revolutionary</p>
+          <h1 className="text-4xl font-bold mb-4">Sprout Features</h1>
+          <p className="text-xl text-muted-foreground">Discover what makes Sprout revolutionary</p>
         </div>
 
         <div className="grid gap-8 mb-12">

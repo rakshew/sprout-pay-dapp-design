@@ -15,7 +15,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "SproutPay - Crypto payments, simplified",
+  title: "Sprout - Crypto payments, simplified",
   description: "Send or receive any EVM token, across chains, with military-grade escrow protection.",
   generator: "v0.app",
 }

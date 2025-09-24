@@ -15,7 +15,7 @@ export default function SettingsPopup() {
       <div className="relative z-10 container mx-auto px-8 py-20 max-w-3xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Settings</h1>
-          <p className="text-xl text-muted-foreground">Customize your SproutPay experience</p>
+          <p className="text-xl text-muted-foreground">Customize your Sprout experience</p>
         </div>
 
         <div className="space-y-6 mb-12">

@@ -71,7 +71,7 @@ export default function ReceivePage() {
             <div className="space-y-2">
               <label className="text-sm font-medium text-muted-foreground">Payment URL or ID</label>
               <Input
-                placeholder="sproutpay.link/pay/xyz123abc or xyz123abc"
+                placeholder="sprout.link/pay/xyz123abc or xyz123abc"
                 value={paymentUrl}
                 onChange={(e) => setPaymentUrl(e.target.value)}
                 className="h-12 text-lg bg-background/50"
@@ -93,7 +93,7 @@ export default function ReceivePage() {
               ) : (
                 <>
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5S17.52 5 19 5 21 7.01 21 9.5 18.99 14 15.5 14zm-1-14C7.01 2 5 6.48 5 12s2.01 10 10 10 10-2.01 10-10S17.99 2 12 2zm5 10h-2v-6h2v6zm0-8h-2V7h2v2z" />
                   </svg>
                   Check Payment Status
                 </>

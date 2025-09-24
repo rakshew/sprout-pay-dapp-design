@@ -3,7 +3,7 @@
 import Link from "next/link"
 
 export default function SharePage() {
-  const paymentLink = "https://sproutpay.app/pay/abc123def456"
+  const paymentLink = "https://sprout.app/pay/abc123def456"
 
   const shareOptions = [
     { name: "Email", icon: "📧", color: "bg-blue-600" },
@@ -47,7 +47,7 @@ export default function SharePage() {
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-600 mb-8">
             <h3 className="text-xl font-semibold text-white mb-4">Payment Link Preview</h3>
             <div className="bg-gray-700/50 p-6 rounded-2xl">
-              <div className="text-gray-400 text-sm mb-2">💰 SproutPay Payment Request</div>
+              <div className="text-gray-400 text-sm mb-2">💰 Sprout Payment Request</div>
               <div className="text-white font-semibold mb-2">
                 You have received a payment request for 1.5 ETH ($4,868.51)
               </div>
