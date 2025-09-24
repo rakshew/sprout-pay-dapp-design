@@ -148,8 +148,8 @@ export default function HomePage() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {[
             {
-              title: "Freelancers",
-              desc: "Secure payment without chasing invoices",
+              title: "Freelancers & Employers",
+              desc: "Secure payments, cross-token flexibility, zero hassle",
               icon: "⭐",
               gradient: "from-primary/10 to-accent/10",
               border: "border-primary/40",
@@ -289,7 +289,7 @@ export default function HomePage() {
               <div className="space-y-8">
                 {[
                   {
-                    quote: "Freelancer safe-payments without chasing invoices",
+                    quote: "Secure payments, cross-token flexibility, zero hassle",
                     name: "Sarah Chen",
                     role: "Web Designer",
                     gradient: "from-primary/10 to-accent/10",
