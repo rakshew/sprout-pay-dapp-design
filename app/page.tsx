@@ -120,10 +120,12 @@ export default function HomePage() {
             ].map((chain, index) => (
               <div
                 key={chain.name}
-                className={`flex items-center gap-3 text-white hover:text-white smooth-transition stagger-item`}
+                className={`flex items-center gap-3 text-white hover:text-white smooth-transition stagger-item animate-bounce-subtle`}
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div
-                  className={`w-8 h-8 ${chain.color} rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg hover-lift`}
+                  className={`w-8 h-8 ${chain.color} rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg hover-lift animate-pulse-slow`}
+                  style={{ animationDelay: `${index * 0.3}s` }}
                 >
                   {chain.letter}
                 </div>
