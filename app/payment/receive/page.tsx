@@ -2,14 +2,38 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowLeft, Wallet, Shield, CheckCircle, AlertTriangle, Sparkles } from "lucide-react"
+import {
+  ArrowLeft,
+  Wallet,
+  Shield,
+  CheckCircle,
+  AlertTriangle,
+  Sparkles,
+  QrCode,
+  Copy,
+  ExternalLink,
+} from "lucide-react"
 import { useWallet } from "@/hooks/use-wallet"
+import { useState } from "react"
 
 export default function ReceivePaymentPage() {
   const { isConnected, address, connectWallet } = useWallet()
+  const [copied, setCopied] = useState(false)
+
+  const paymentStatusUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/payment/status`
 
   const handleConnectWallet = async () => {
     await connectWallet("metamask")
+  }
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(paymentStatusUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error("Failed to copy:", err)
+    }
   }
 
   return (
@@ -36,10 +60,10 @@ export default function ReceivePaymentPage() {
             <Sparkles className="w-16 h-16 text-primary pulse-glow" />
           </div>
           <h2 className="text-3xl font-bold mb-4">Payment Ready to Claim</h2>
-          <p className="text-xl text-muted-foreground">Connect your wallet to receive 4,980 USDC</p>
+          <p className="text-xl text-muted-foreground">Connect your wallet to receive 8,100 DAI</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <Card className="border-primary/20 bg-card/80 backdrop-blur-sm glow-primary">
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
@@ -50,8 +74,8 @@ export default function ReceivePaymentPage() {
             <CardContent className="space-y-6">
               <div className="bg-muted/20 rounded-xl p-6 border border-primary/20">
                 <div className="text-center mb-4">
-                  <div className="text-3xl font-bold text-accent">4,980 USDC</div>
-                  <div className="text-lg text-muted-foreground">$4,980.00 USD</div>
+                  <div className="text-3xl font-bold text-accent">8,100 DAI</div>
+                  <div className="text-lg text-muted-foreground">≈ $8,100 value</div>
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between">
@@ -60,11 +84,11 @@ export default function ReceivePaymentPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Original Amount:</span>
-                    <span>5 ETH ($12,450)</span>
+                    <span>2.5 ETH</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Conversion:</span>
-                    <span className="text-primary">ETH → USDC</span>
+                    <span className="text-primary">ETH → DAI</span>
                   </div>
                 </div>
               </div>
@@ -82,6 +106,59 @@ export default function ReceivePaymentPage() {
                   <CheckCircle className="w-5 h-5 text-primary" />
                   <span>Zero gas fees</span>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-accent/20 bg-card/80 backdrop-blur-sm glow-accent">
+            <CardHeader>
+              <CardTitle className="text-2xl flex items-center gap-3">
+                <QrCode className="w-7 h-7 text-accent" />
+                Payment Status Link
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="text-center space-y-4">
+                <div className="w-48 h-48 bg-white rounded-xl p-4 mx-auto border border-accent/20">
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(paymentStatusUrl)}`}
+                    alt="Payment Status QR Code"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground">Scan to view payment status and remaining days</p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="bg-muted/20 rounded-xl p-3 border border-accent/20">
+                  <p className="font-mono text-xs break-all text-muted-foreground">{paymentStatusUrl}</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={copyToClipboard}
+                    className="border-accent/30 bg-transparent"
+                  >
+                    <Copy className="w-4 h-4 mr-2" />
+                    {copied ? "Copied!" : "Copy"}
+                  </Button>
+                  <Link href="/payment/status">
+                    <Button variant="outline" size="sm" className="w-full border-accent/30 bg-transparent">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Status
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="bg-accent/10 rounded-xl p-4 border border-accent/20">
+                <h4 className="font-bold text-accent mb-2">For Recipients:</h4>
+                <p className="text-sm text-muted-foreground">
+                  Share this QR code or link to track payment status, view remaining escrow days, and access claim
+                  options.
+                </p>
               </div>
             </CardContent>
           </Card>

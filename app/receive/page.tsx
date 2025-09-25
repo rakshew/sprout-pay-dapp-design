@@ -19,8 +19,8 @@ export default function ReceivePage() {
     // Simulate API call
     setTimeout(() => {
       setPaymentStatus({
-        amount: "2,500 DAI",
-        usdValue: "$2,500.00",
+        amount: "8,100 DAI", // Updated amount to match 2.5 ETH → 8,100 DAI conversion
+        usdValue: "$8,100.00",
         receiverAddress: "0x742d35Cc6634C0532925a3b8D4C9db96590b5b8c",
         status: "pending",
         releaseDate: "March 15, 2025",
