@@ -31,8 +31,8 @@ export default function HistoryPage() {
     {
       id: "3",
       type: "sent",
-      amount: "1.5 ETH",
-      usdValue: "$3,735.00",
+      amount: "2.5 ETH",
+      usdValue: "$8,100.00",
       recipient: "0x5C2e...9F7",
       status: "completed",
       date: "2024-01-12",

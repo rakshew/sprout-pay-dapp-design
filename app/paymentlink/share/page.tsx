@@ -49,7 +49,7 @@ export default function SharePage() {
             <div className="bg-gray-700/50 p-6 rounded-2xl">
               <div className="text-gray-400 text-sm mb-2">💰 Sprout Payment Request</div>
               <div className="text-white font-semibold mb-2">
-                You have received a payment request for 1.5 ETH ($4,868.51)
+                You have received a payment request for 2.5 ETH ($8,100.00)
               </div>
               <div className="text-purple-400 font-mono text-sm break-all">{paymentLink}</div>
             </div>

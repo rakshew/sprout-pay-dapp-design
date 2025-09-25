@@ -6,8 +6,8 @@ export default function ReviewPage() {
   // Mock data - in real app this would come from state/context
   const paymentData = {
     token: "ETH",
-    amount: "1.5",
-    usdValue: "4,868.51",
+    amount: "2.5",
+    usdValue: "8,100.00",
     recipient: "0x742d35Cc6634C0532925a3b8D4C9db4C4C4C4C4C",
     escrowDate: "2024-01-15",
     hasCustomContract: true,

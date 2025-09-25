@@ -53,8 +53,8 @@ export default function PaymentPage() {
               </CardHeader>
               <CardContent className="space-y-8">
                 <div className="text-center py-6">
-                  <div className="text-5xl font-bold text-primary mb-2">5 ETH</div>
-                  <div className="text-2xl text-muted-foreground">$12,450.00 USD</div>
+                  <div className="text-5xl font-bold text-primary mb-2">2.5 ETH</div>
+                  <div className="text-2xl text-muted-foreground">$8,114.00 USD</div>
                   <Badge className="mt-4 bg-accent/20 text-accent border-accent/30 text-lg px-6 py-2">
                     <Sparkles className="w-5 h-5 mr-2" />
                     Gasless Transaction
@@ -64,15 +64,15 @@ export default function PaymentPage() {
                 <div className="space-y-6">
                   <div className="flex justify-between items-center text-lg">
                     <span className="text-muted-foreground">Amount Sent:</span>
-                    <span className="font-bold">5 ETH</span>
+                    <span className="font-bold">2.5 ETH</span>
                   </div>
                   <div className="flex justify-between items-center text-lg">
                     <span className="text-muted-foreground">Recipient Gets:</span>
-                    <span className="font-bold text-accent">12,450 USDT</span>
+                    <span className="font-bold text-accent">8,100 DAI</span>
                   </div>
                   <div className="flex justify-between items-center text-lg">
                     <span className="text-muted-foreground">Exchange Rate:</span>
-                    <span>1 ETH = 2,490 USDT</span>
+                    <span>1 ETH = 3,240 DAI</span>
                   </div>
                   <div className="flex justify-between items-center text-lg">
                     <span className="text-muted-foreground">Gas Fees:</span>

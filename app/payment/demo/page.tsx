@@ -23,8 +23,8 @@ export default function PaymentDemoPage() {
         {/* Payment Amount Display */}
         <Card className="mb-8 border-primary/20 bg-card/80 backdrop-blur-sm glow-primary">
           <CardContent className="p-8 text-center">
-            <div className="text-4xl font-bold text-primary mb-3">4,980 USDC</div>
-            <p className="text-muted-foreground mb-4">Auto-converted from 5 ETH</p>
+            <div className="text-4xl font-bold text-primary mb-3">8,100 DAI</div>
+            <p className="text-muted-foreground mb-4">Auto-converted from 2.5 ETH</p>
             <Badge variant="secondary" className="mb-6 bg-accent/20 text-accent">
               <Clock className="w-3 h-3 mr-1" />
               Smart Contract Timelock: 30 days
