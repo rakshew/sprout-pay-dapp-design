@@ -1,12 +1,22 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Clock, Shield, AlertCircle, CheckCircle, Eye, MessageSquare } from "lucide-react"
+import { ExtendTimelockModal } from "@/components/extend-timelock-modal"
 
 export default function PaymentStatusPage() {
+  const [isExtendModalOpen, setIsExtendModalOpen] = useState(false)
+  const currentExpiryDate = new Date("2025-03-15") // March 15, 2025
+
+  const handleExtendTimelock = (newDate: Date) => {
+    console.log("[v0] Timelock extended to:", newDate)
+    // Handle the extension logic here
+  }
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20"></div>
@@ -140,6 +150,15 @@ export default function PaymentStatusPage() {
                   Contact Recipient
                 </Button>
 
+                <Button
+                  variant="outline"
+                  className="w-full h-12 border-blue-500/30 text-blue-500 smooth-transition bg-transparent"
+                  onClick={() => setIsExtendModalOpen(true)}
+                >
+                  <Clock className="w-5 h-5 mr-2" />
+                  Extend Timelock
+                </Button>
+
                 <Link href="/payment/dispute">
                   <Button
                     variant="outline"
@@ -166,6 +185,14 @@ export default function PaymentStatusPage() {
           </div>
         </div>
       </div>
+
+      <ExtendTimelockModal
+        isOpen={isExtendModalOpen}
+        onClose={() => setIsExtendModalOpen(false)}
+        currentExpiryDate={currentExpiryDate}
+        onExtend={handleExtendTimelock}
+        title="Extend Payment Timelock"
+      />
     </div>
   )
 }

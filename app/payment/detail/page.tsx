@@ -1,10 +1,22 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Shield, Clock, CheckCircle, AlertCircle, ExternalLink, Copy } from "lucide-react"
+import { ExtendTimelockModal } from "@/components/extend-timelock-modal"
 
 export default function PaymentDetailPage() {
+  const [isExtendModalOpen, setIsExtendModalOpen] = useState(false)
+  const currentExpiryDate = new Date("2024-10-21") // Oct 21, 2024
+
+  const handleExtendTimelock = (newDate: Date) => {
+    console.log("[v0] Contract timelock extended to:", newDate)
+    // Handle the extension logic here
+  }
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20"></div>
@@ -28,8 +40,8 @@ export default function PaymentDetailPage() {
               <Shield className="w-10 h-10 text-primary" />
             </div>
             <h2 className="text-2xl font-bold mb-3">Funds Secured in Escrow</h2>
-            <div className="text-4xl font-bold text-primary mb-3">4,980 USDC</div>
-            <p className="text-muted-foreground mb-6">Auto-converted from 5 ETH via DEX aggregator</p>
+            <div className="text-4xl font-bold text-primary mb-3">8,100 DAI</div>
+            <p className="text-muted-foreground mb-6">Auto-converted from 2.5 ETH via DEX aggregator</p>
             <Badge className="bg-accent/20 text-accent border-accent/30 px-4 py-2">
               <Clock className="w-4 h-4 mr-2" />
               Timelock Active: 28 days remaining
@@ -87,10 +99,19 @@ export default function PaymentDetailPage() {
         </Card>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <Button className="h-14 text-lg font-bold glow-primary">
             <CheckCircle className="w-5 h-5 mr-2" />
             Release Early
+          </Button>
+
+          <Button
+            variant="outline"
+            className="h-14 text-lg border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white bg-transparent"
+            onClick={() => setIsExtendModalOpen(true)}
+          >
+            <Clock className="w-5 h-5 mr-2" />
+            Extend Timelock
           </Button>
 
           <Button variant="destructive" className="h-14 text-lg">
@@ -111,7 +132,7 @@ export default function PaymentDetailPage() {
                 <div>
                   <div className="font-medium">Contract Deployed & Funded</div>
                   <div className="text-sm text-muted-foreground">Sep 21, 2024 at 14:30 UTC</div>
-                  <div className="text-sm text-primary">5 ETH deposited and converted to 4,980 USDC</div>
+                  <div className="text-sm text-primary">2.5 ETH deposited and converted to 8,100 DAI</div>
                 </div>
               </div>
 
@@ -160,6 +181,14 @@ export default function PaymentDetailPage() {
           </Link>
         </div>
       </div>
+
+      <ExtendTimelockModal
+        isOpen={isExtendModalOpen}
+        onClose={() => setIsExtendModalOpen(false)}
+        currentExpiryDate={currentExpiryDate}
+        onExtend={handleExtendTimelock}
+        title="Extend Contract Timelock"
+      />
     </div>
   )
 }

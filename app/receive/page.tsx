@@ -6,11 +6,19 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import { ExtendTimelockModal } from "@/components/extend-timelock-modal"
 
 export default function ReceivePage() {
   const [paymentUrl, setPaymentUrl] = useState("")
   const [paymentStatus, setPaymentStatus] = useState<any>(null)
   const [loading, setLoading] = useState(false)
+  const [isExtendModalOpen, setIsExtendModalOpen] = useState(false)
+  const currentExpiryDate = new Date("2025-03-15") // March 15, 2025
+
+  const handleExtendTimelock = (newDate: Date) => {
+    console.log("[v0] Extension requested for:", newDate)
+    // Handle the extension request logic here
+  }
 
   const handleCheckPayment = async () => {
     if (!paymentUrl) return
@@ -93,7 +101,7 @@ export default function ReceivePage() {
               ) : (
                 <>
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5S17.52 5 19 5 21 7.01 21 9.5 18.99 14 15.5 14zm-1-14C7.01 2 5 6.48 5 12s2.01 10 10 10 10-2.01 10-10S17.99 2 12 2zm5 10h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5S17.52 5 19 5 21 7.01 21 9.5 18.99 14 15.5 14zm-1-14C7.01 2 5 6.48 5 12s2.01 10 10 10 10-4.48 10-10S17.99 2 12 2zm5 10h-2v-6h2v6zm0-8h-2V7h2v2z" />
                   </svg>
                   Check Payment Status
                 </>
@@ -158,6 +166,16 @@ export default function ReceivePage() {
                   </svg>
                   Release Funds Early
                 </Button>
+                <Button
+                  variant="outline"
+                  className="flex-1 h-12 border-blue-500/30 text-blue-500 bg-transparent"
+                  onClick={() => setIsExtendModalOpen(true)}
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  Request Extension
+                </Button>
                 <Button variant="outline" className="flex-1 h-12 border-accent/30 bg-transparent">
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
@@ -169,6 +187,14 @@ export default function ReceivePage() {
           </Card>
         )}
       </div>
+
+      <ExtendTimelockModal
+        isOpen={isExtendModalOpen}
+        onClose={() => setIsExtendModalOpen(false)}
+        currentExpiryDate={currentExpiryDate}
+        onExtend={handleExtendTimelock}
+        title="Request Timelock Extension"
+      />
     </div>
   )
 }
